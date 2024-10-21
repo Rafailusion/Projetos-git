@@ -12,79 +12,59 @@
             box-sizing: border-box;
         }
 
-        /* Estilos principais */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             line-height: 1.6;
-        }
-
-        header, nav, main, aside, article, footer {
-            padding: 20px;
-            margin: 10px;
+            background-color: #f4f4f4;
         }
 
         header {
             background-color: #333;
             color: white;
+            padding: 20px;
             text-align: center;
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
         }
 
         nav {
             background-color: green;
             color: white;
-            height: 60px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.2rem;
         }
 
         main {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
+            padding: 20px;
         }
 
-        h1 {
-            background-color: red;
-            color: black;
-            text-align: center;
-            padding: 10px;
+        aside, article {
+            background-color: #fff;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         aside {
-            background-color: yellow;
             flex: 1 1 200px;
-            margin-right: 10px;
-            padding: 10px;
         }
 
         article {
             flex: 2 1 500px;
-            margin-bottom: 10px;
-        }
-
-        p {
-            background-color: blue;
-            color: white;
-            padding: 20px;
-        }
-
-        h2 {
-            background-color: yellow;
-            color: black;
-            padding: 10px;
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            margin: 0 auto;
-        }
-
-        /* Listas */
-        section {
-            margin-bottom: 20px;
         }
 
         footer {
@@ -92,14 +72,31 @@
             color: white;
             text-align: center;
             padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        /* Botão interativo */
+        .btn {
+            background-color: green;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin-top: 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: darkgreen;
         }
 
         /* Media queries para responsividade */
         @media (max-width: 768px) {
             nav {
-                height: auto;
-                padding: 10px;
-                text-align: center;
+                font-size: 1rem;
             }
 
             main {
@@ -107,55 +104,56 @@
             }
 
             aside {
-                margin: 0;
-                margin-bottom: 10px;
+                margin-bottom: 20px;
             }
 
-            article {
-                margin: 0;
+            header h1 {
+                font-size: 2rem;
             }
         }
 
         @media (max-width: 480px) {
-            h1 {
+            header h1 {
                 font-size: 1.5rem;
             }
 
-            h2 {
-                font-size: 1.2rem;
-            }
-
-            p {
+            nav a {
                 font-size: 1rem;
-                padding: 15px;
-            }
-
-            nav {
-                font-size: 1.1rem;
             }
         }
     </style>
 </head>
 <body>
     <header>
-        Cabeçalho da Página
+        <h1>Página Responsiva do Rafael</h1>
     </header>
 
     <nav>
-        Barra de Navegação
+        <a href="#">Home</a>
+        <a href="#">Sobre</a>
+        <a href="#">Serviços</a>
+        <a href="#">Contato</a>
     </nav>
 
     <main>
-        <h1>Página do Rafael</h1>
         <aside>
-            Barra Lateral
+            <h2>Barra Lateral</h2>
+            <p>Conteúdo da barra lateral que pode incluir links, anúncios ou outras informações úteis.</p>
         </aside>
+
         <article>
+            <h2>Artigo Principal</h2>
             <p>O Rafael está aprendendo a criar páginas web. Olha que bacana, isso é o começo de muitas que estão por vir.</p>
-            <h2>Continuação</h2>
+            <h3>Continuação</h3>
             <p>Para continuar incluindo títulos, insira h2 e sucessivamente.</p>
-            <img src="https://www.guinnessworldrecords.com/Images/159970162_tcm25-477432.png" alt="bela imagem"/>
-            
+
+            <h3>Imagem Exemplo</h3>
+            <img src="https://www.guinnessworldrecords.com/Images/159970162_tcm25-477432.png" alt="bela imagem" style="max-width: 100%; height: auto;">
+
+            <h3>Interatividade com JavaScript</h3>
+            <p id="message">Clique no botão abaixo para uma surpresa!</p>
+            <button class="btn" onclick="surprise()">Clique aqui</button>
+
             <section>
                 <h3>Lista Ordenada</h3>
                 <ol>
@@ -177,11 +175,11 @@
             <section>
                 <h3>Lista de Definição</h3>
                 <dl>
-                    <dt>Primeiro Item da lista</dt>
+                    <dt>Primeiro Item</dt>
                     <dd>Descrição do primeiro elemento</dd>
-                    <dt>Segundo Item da lista</dt>
+                    <dt>Segundo Item</dt>
                     <dd>Descrição do segundo elemento</dd>
-                    <dt>Terceiro Item da lista</dt>
+                    <dt>Terceiro Item</dt>
                     <dd>Descrição do terceiro elemento</dd>
                 </dl>
             </section>
@@ -189,9 +187,16 @@
     </main>
 
     <footer>
-        Rodapé
+        <p>&copy; 2024 Rafael - Todos os direitos reservados.</p>
     </footer>
+
+    <script>
+        // Função de JavaScript para exibir uma mensagem interativa
+        function surprise() {
+            const message = document.getElementById("message");
+            message.innerHTML = "Parabéns! Você clicou no botão e isso ativou este texto interativo.";
+            message.style.color = "green";
+        }
+    </script>
 </body>
 </html>
-
-	
