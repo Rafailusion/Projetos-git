@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Responsiva do Rafael</title>
+    <style>
+        /* Reset básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+        }
+
+        nav {
+            background-color: green;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.2rem;
+        }
+
+        main {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 20px;
+        }
+
+        aside, article {
+            background-color: #fff;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        aside {
+            flex: 1 1 200px;
+        }
+
+        article {
+            flex: 2 1 500px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        /* Botão interativo */
+        .btn {
+            background-color: green;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin-top: 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: darkgreen;
+        }
+
+        /* Media queries para responsividade */
+        @media (max-width: 768px) {
+            nav {
+                font-size: 1rem;
+            }
+
+            main {
+                flex-direction: column;
+            }
+
+            aside {
+                margin-bottom: 20px;
+            }
+
+            header h1 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.5rem;
+            }
+
+            nav a {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Página Responsiva do Rafael</h1>
+    </header>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Sobre</a>
+        <a href="#">Serviços</a>
+        <a href="#">Contato</a>
+    </nav>
+
+    <main>
+        <aside>
+            <h2>Barra Lateral</h2>
+            <p>Conteúdo da barra lateral que pode incluir links, anúncios ou outras informações úteis.</p>
+        </aside>
+
+        <article>
+            <h2>Artigo Principal</h2>
+            <p>O Rafael está aprendendo a criar páginas web. Olha que bacana, isso é o começo de muitas que estão por vir.</p>
+            <h3>Continuação</h3>
+            <p>Para continuar incluindo títulos, insira h2 e sucessivamente.</p>
+
+            <h3>Imagem Exemplo</h3>
+            <img src="https://www.guinnessworldrecords.com/Images/159970162_tcm25-477432.png" alt="bela imagem" style="max-width: 100%; height: auto;">
+
+            <h3>Interatividade com JavaScript</h3>
+            <p id="message">Clique no botão abaixo para uma surpresa!</p>
+            <button class="btn" onclick="surprise()">Clique aqui</button>
+
+            <section>
+                <h3>Lista Ordenada</h3>
+                <ol>
+                    <li>Primeiro item da lista</li>
+                    <li>Segundo item da lista</li>
+                    <li>Terceiro item da lista</li>
+                </ol>
+            </section>
+
+            <section>
+                <h3>Lista Não Ordenada</h3>
+                <ul>
+                    <li>Primeiro Item da lista não ordenada</li>
+                    <li>Segundo Item da lista não ordenada</li>
+                    <li>Terceiro Item da lista não ordenada</li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>Lista de Definição</h3>
+                <dl>
+                    <dt>Primeiro Item</dt>
+                    <dd>Descrição do primeiro elemento</dd>
+                    <dt>Segundo Item</dt>
+                    <dd>Descrição do segundo elemento</dd>
+                    <dt>Terceiro Item</dt>
+                    <dd>Descrição do terceiro elemento</dd>
+                </dl>
+            </section>
+        </article>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Rafael - Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        // Função de JavaScript para exibir uma mensagem interativa
+        function surprise() {
+            const message = document.getElementById("message");
+            message.innerHTML = "Parabéns! Você clicou no botão e isso ativou este texto interativo.";
+            message.style.color = "green";
+        }
+    </script>
+</body>
+</html>
