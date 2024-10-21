@@ -1,70 +1,197 @@
 <!DOCTYPE html>
-<html>
-    <head>
-	     <meta charset='utf-8'>
-		 <title>Tags html</title>
-	</head>
-	<body>
-	<header>
-	Cabeçalho da Página
-	</header>
-	<nav style="background-color: green;color: white;height: 100px;">
-	Barra de Navegação
-	</nav>
-	<main>
-	<h1 style="background-color: red;color: black;height: 100px;">
-	Página do Rafael
-	</h1>
-	<aside style="background-color: yellow;color: black;height: 50px;">
-	Barra Lateral
-	</aside>
-	<article>
-	Artigo/Post
-	</article>
-	<p style="background-color: blue;color: white;height: 100px;">
-	O Rafael está aprendendo a criar paginás web olha que bacana, isso é o começo de de muitas que estão por vir.
-	</p>
-	<h2 style="background-color: yellow;color: black;height: 50px;">
-	Continuação
-	</h2>
-	<p>
-	Para continuar incluindo titulos inserir h2 e sucessivamente.
-	</p>
-	<img src="https://www.guinnessworldrecords.com/Images/159970162_tcm25-477432.png"alt="bela imagem"/>
-	
-	<section>
-	<h3>Lista Ordenada</h3>
-	<ol>
-	<li>Primeiro item da lista</li>
-	<li>Segundo item da lista</li>
-	<li>Terceiro item da lista</li>
-	</ol>
-	</section>
-	
-	<section>
-	<h3>Lista não Ordenada</h3>
-	<ul>
-    <li> Primeiro Item da lista não ordenada </li>
-    <li> Segundo Item da lista não ordenada </li>
-    <li> Terceiro Item da lista não ordenada </li>
-    </ul>
-	</section>
-	
-	<section>
-	<h3>Lista de Definição</h3>
-	<dl>
-    <dt> Primeiro Item da lista não ordenada </dt>
-    <dd> Descrição do primeiro elemento </dd>
-    <dt> Segundo Item da lista não ordenada </dt>
-    <dd> Descrição do segundo elemento </dd>
-    <dt> Terceiro Item da lista não ordenada </dt>
-    <dd> Descrição do terceiro elemento </dd>
-    </dl>
-	</section>
-	</main>
-	  <footer>
-	  Rodapé
-	  </footer>	
-	</body>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Responsiva do Rafael</title>
+    <style>
+        /* Reset básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Estilos principais */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        header, nav, main, aside, article, footer {
+            padding: 20px;
+            margin: 10px;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+        }
+
+        nav {
+            background-color: green;
+            color: white;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        main {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        h1 {
+            background-color: red;
+            color: black;
+            text-align: center;
+            padding: 10px;
+        }
+
+        aside {
+            background-color: yellow;
+            flex: 1 1 200px;
+            margin-right: 10px;
+            padding: 10px;
+        }
+
+        article {
+            flex: 2 1 500px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            background-color: blue;
+            color: white;
+            padding: 20px;
+        }
+
+        h2 {
+            background-color: yellow;
+            color: black;
+            padding: 10px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Listas */
+        section {
+            margin-bottom: 20px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        /* Media queries para responsividade */
+        @media (max-width: 768px) {
+            nav {
+                height: auto;
+                padding: 10px;
+                text-align: center;
+            }
+
+            main {
+                flex-direction: column;
+            }
+
+            aside {
+                margin: 0;
+                margin-bottom: 10px;
+            }
+
+            article {
+                margin: 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            h2 {
+                font-size: 1.2rem;
+            }
+
+            p {
+                font-size: 1rem;
+                padding: 15px;
+            }
+
+            nav {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        Cabeçalho da Página
+    </header>
+
+    <nav>
+        Barra de Navegação
+    </nav>
+
+    <main>
+        <h1>Página do Rafael</h1>
+        <aside>
+            Barra Lateral
+        </aside>
+        <article>
+            <p>O Rafael está aprendendo a criar páginas web. Olha que bacana, isso é o começo de muitas que estão por vir.</p>
+            <h2>Continuação</h2>
+            <p>Para continuar incluindo títulos, insira h2 e sucessivamente.</p>
+            <img src="https://www.guinnessworldrecords.com/Images/159970162_tcm25-477432.png" alt="bela imagem"/>
+            
+            <section>
+                <h3>Lista Ordenada</h3>
+                <ol>
+                    <li>Primeiro item da lista</li>
+                    <li>Segundo item da lista</li>
+                    <li>Terceiro item da lista</li>
+                </ol>
+            </section>
+
+            <section>
+                <h3>Lista Não Ordenada</h3>
+                <ul>
+                    <li>Primeiro Item da lista não ordenada</li>
+                    <li>Segundo Item da lista não ordenada</li>
+                    <li>Terceiro Item da lista não ordenada</li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>Lista de Definição</h3>
+                <dl>
+                    <dt>Primeiro Item da lista</dt>
+                    <dd>Descrição do primeiro elemento</dd>
+                    <dt>Segundo Item da lista</dt>
+                    <dd>Descrição do segundo elemento</dd>
+                    <dt>Terceiro Item da lista</dt>
+                    <dd>Descrição do terceiro elemento</dd>
+                </dl>
+            </section>
+        </article>
+    </main>
+
+    <footer>
+        Rodapé
+    </footer>
+</body>
 </html>
+
 	
